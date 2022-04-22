@@ -1,0 +1,11 @@
+body {
+  align-items: center;
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  height: 80px;
+  justify-content: space-around;
+  margin: 10px;
+  outline: none;
+  width: 200px;
+}
