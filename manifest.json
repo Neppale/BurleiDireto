@@ -1,0 +1,11 @@
+{
+  "name": "BurleiDireto",
+  "description": "Burle a censura do PasseiDireto e garanta a melhor nota nos seus trabalhos acadêmicos. De graça.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [{
+    "css": ["css/styles.css"],
+    "js": ["./js/burleidireto.js"],
+    "matches": ["https://www.passeidireto.com/*"]
+  }]
+}

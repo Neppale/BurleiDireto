@@ -1,0 +1,13 @@
+pre {
+  content: initial !important;
+  backdrop-filter: none !important;
+  user-select: text !important;
+}
+
+.file-text-preview.hidden-content:after {
+  content: initial !important;
+  backdrop-filter: none !important;
+  user-select: text !important;
+}
+
+/*     "css": ["css/styles.css"], */
