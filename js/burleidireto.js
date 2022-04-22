@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
       currentWindow: true,
       url: "https://www.passeidireto.com/*",
     }); // Get the tab the corresponds to these attributes
-    console.log([tab]);
 
     chrome.storage.local.set({ switchOption: switchOption }, function () {
       console.log("[BurleiDireto] Switch settings saved: " + switchOption); // [DEBUG] Debug message
