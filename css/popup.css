@@ -1,11 +1,10 @@
 body {
   align-items: center;
-  border: none;
+  border: 93px;
   border-radius: 2px;
   display: flex;
-  height: 80px;
   justify-content: space-around;
-  margin: 10px;
   outline: none;
-  width: 200px;
+  padding: 10px;
+  width: 300px;
 }
