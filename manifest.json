@@ -4,11 +4,13 @@
   "version": "2.0",
   "manifest_version": 3,
 
-  "content_scripts": [{
-    "js": ["./js/burleidireto.js"],
-    "matches": ["https://www.passeidireto.com/*"]
-  }],
-  
+  "content_scripts": [
+    {
+      "js": ["./js/burleidireto.js"],
+      "matches": ["https://www.passeidireto.com/*"]
+    }
+  ],
+
   "action": {
     "default_popup": "./html/popup.html",
     "default_icon": {
@@ -26,9 +28,5 @@
     "128": "/img/128x128.png"
   },
 
-  "permissions": [
-    "storage", 
-    "activeTab", 
-    "scripting"
-  ]
+  "permissions": ["storage", "activeTab", "scripting"]
 }

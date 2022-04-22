@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Conhecimento deve ser livre, e não isolado por de barreiras monetárias.
+Conhecimento deve ser livre, e não isolado por barreiras monetárias.
 O objetivo deste projeto é permitir o acesso ao PasseiDireto e seus documentos de forma livre através de uma extensão simples.
 
 ## Primeiros Passos
