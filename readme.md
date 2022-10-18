@@ -13,16 +13,13 @@ O objetivo deste projeto é permitir o acesso ao PasseiDireto e seus documentos 
 
 ### Instalação
 
-- Clique em Code -> Download ZIP;
-- Extraia o arquivo compactado em uma pasta própria;
-- Acesse a aba de extensões do seu navegador (ou acesse chrome://extensions);
-- Ative o Modo Desenvolvedor;
-- Clique em "Carregar sem compactação";
-- Selecione a pasta em que o arquivo compactado foi extraído.
-
-Este processo (talvez) será facilitado em atualizações futuras.
+- Navegue para https://github.com/Neppale/burleidireto/releases/latest para baixar a última versão do BurleiDireto.
+- Extraia o arquivo baixado.
+- Arraste o arquivo extraído `BurleiDireto.crx` para a janela de extensões do seu navegador (geralmente acessada pelo site `chrome://extensions/`).
+- Clique em Instalar.
+- Pronto!
 
 ### Execução
 
-- Clique no ícone da extensão no canto superior direito;
+- Encontre e clique no ícone do BurleiDireto na barra de extensões do seu navegador.
 - Clique em "Ativar BurleiDireto" para ativar a extensão.
