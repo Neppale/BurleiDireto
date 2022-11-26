@@ -1,3 +1,8 @@
+body {
+  /* for debugging */
+  background-color: red;
+}
+
 pre {
   content: initial !important;
   backdrop-filter: none !important;

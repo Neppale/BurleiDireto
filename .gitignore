@@ -1,0 +1,5 @@
+# Build files.
+*.crx
+*.xpi
+*.pem
+*.zip
