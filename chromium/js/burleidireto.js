@@ -12,30 +12,39 @@ function log(...data) {
  * it removes the stylesheet.
  */
 async function changeBlur() {
-  const head = document.getElementsByTagName("HEAD")[0];
-  const link = document.createElement("link");
   const switchOption = await getFromStorage("switchOption");
 
   if (switchOption) {
-    link.rel = "stylesheet";
-    link.type = "text/css";
-    link.href = "https://www.verissimo.dev/api/styles.css";
-    link.className = "burleiDireto";
-    head.appendChild(link);
+    const stylesheet = document.createElement("style");
+    stylesheet.classList.add("burleiDireto");
+    stylesheet.innerHTML = `
+      pre {
+        content: initial !important;
+        backdrop-filter: none !important;
+        user-select: text !important;
+      }
+      ::after {
+        content: initial !important;
+        backdrop-filter: none !important;
+        user-select: text !important;
+      }
+    `;
+    document.head.appendChild(stylesheet);
   } else {
-    const stylesheet = document.getElementsByClassName("burleiDireto")[0];
-    if (stylesheet) stylesheet.remove();
+    document.head.removeChild(
+      document.getElementsByClassName("burleiDireto")[0]
+    );
   }
 }
 
 async function getFromStorage(key) {
   try {
     let chromeStorage = await chrome.storage.local.get(key);
-    log(`${key} from Chromium storage: ${chromeStorage[key]}`);
+    log(`${key} from Chromium storage: ${chromeStorage[key] || false} `);
     return chromeStorage[key];
   } catch (error) {
-    let localStorage = await storage.local.get(key);
-    log(`${key} from Gecko storage: ${localStorage[key]}`);
+    let localStorage = await browser.storage.local.get(key);
+    log(`${key} from Gecko storage: ${localStorage[key] || false}`);
     return localStorage[key];
   }
 }
@@ -44,13 +53,13 @@ function setToStorage(key, value) {
   try {
     chrome.storage.local.set({ [key]: value });
   } catch (error) {
-    storage.local.set({ [key]: value });
+    browser.storage.local.set({ [key]: value });
   }
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
   const switchOption = await getFromStorage("switchOption");
-  if (!!switchOption && switchOption !== null)
+  if (!!switchOption && switchOption !== undefined)
     document.getElementById("activate").checked = true;
   else document.getElementById("activate").checked = false;
 

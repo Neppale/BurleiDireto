@@ -12,19 +12,28 @@ function log(...data) {
  * it removes the stylesheet.
  */
 async function changeBlur() {
-  const head = document.getElementsByTagName("HEAD")[0];
-  const link = document.createElement("link");
   const switchOption = await getFromStorage("switchOption");
 
   if (switchOption) {
-    link.rel = "stylesheet";
-    link.type = "text/css";
-    link.href = "https://www.verissimo.dev/api/styles.css";
-    link.className = "burleiDireto";
-    head.appendChild(link);
+    const stylesheet = document.createElement("style");
+    stylesheet.classList.add("burleiDireto");
+    stylesheet.innerHTML = `
+      pre {
+        content: initial !important;
+        backdrop-filter: none !important;
+        user-select: text !important;
+      }
+      ::after {
+        content: initial !important;
+        backdrop-filter: none !important;
+        user-select: text !important;
+      }
+    `;
+    document.head.appendChild(stylesheet);
   } else {
-    const stylesheet = document.getElementsByClassName("burleiDireto")[0];
-    if (stylesheet) stylesheet.remove();
+    document.head.removeChild(
+      document.getElementsByClassName("burleiDireto")[0]
+    );
   }
 }
 
@@ -59,16 +68,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     if (typeof browser === "undefined") var browser = chrome;
 
-    const [tab] = await browser.tabs.query({
-      active: true,
-      currentWindow: true,
-      url: "https://www.passeidireto.com/*",
-    });
+    const tab = await browser.tabs.getCurrent();
+
     setToStorage("switchOption", switchOption);
 
     if (!tab) return;
 
-    browser.tabs.executeScript({
+    browser.scripting.executeScript({
       target: { tabId: tab.id },
       func: changeBlur,
     });
