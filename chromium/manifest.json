@@ -1,7 +1,7 @@
 {
   "name": "BurleiDireto",
   "description": "Burle a censura do PasseiDireto e garanta a liberdade do conhecimento. De graça.",
-  "version": "2.0",
+  "version": "2.1",
   "manifest_version": 3,
   "content_scripts": [
     {
