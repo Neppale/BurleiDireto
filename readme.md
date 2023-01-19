@@ -16,18 +16,23 @@ Está disponível para os seguintes navegadores:
 - [Opera](https://www.opera.com/pt-br/computer/windows),
 - [Opera GX](https://www.opera.com/computer/gx),
 - [Ungoogled Chromium](https://ungoogled-software.github.io/ungoogled-chromium-binaries/),
-- Entre outros navegadores baseados no Chromium, com exceção do Google Chrome e Microsoft Edge.
+- Entre outros navegadores baseados no Chromium.
 
-Suporte para Google Chrome, Microsoft Edge e navegadores baseados em Gecko (como o Mozilla Firefox) está planejado para os próximos meses.
+Suporte para navegadores baseados em Gecko (como o Mozilla Firefox) está planejado para os próximos meses, além de instalação facilitada pelo Chrome Web Store.
 
 ### Instalação
 
-- Navegue para https://github.com/Neppale/burleidireto/releases/latest para baixar a última versão do BurleiDireto.
-- Extraia o arquivo baixado.
-- Caso seja necessário, habilite o Modo Desenvolvedor nas configurações de seu navegador.
-- Arraste o arquivo extraído `BurleiDireto.crx` para a janela de extensões do seu navegador (geralmente acessada pelo site `chrome://extensions/`).
-- Clique em Instalar.
-- Pronto!
+1. Navegue para https://github.com/Neppale/burleidireto/releases/latest para baixar a última versão do BurleiDireto.
+2. Extraia o arquivo baixado.
+3. Caso seja necessário, habilite o Modo Desenvolvedor nas configurações de seu navegador.
+4. Arraste o arquivo extraído `BurleiDireto.crx` para a janela de extensões do seu navegador (geralmente acessada pelo site `chrome://extensions/`).
+   Alguns navegadores podem não permitir a instalação de extensões externas desta forma.
+
+   4.1. Neste caso, usando um programa de compactação como o 7-Zip ou WinRAR, extraia o arquivo `BurleiDireto.crx` para uma pasta separada.
+
+   4.2. Navegue para `chrome://extensions/` e clique em "Carregar sem compactação" ou similar.
+
+5. Pronto!
 
 ### Execução
 
