@@ -32,6 +32,8 @@ Suporte para navegadores baseados em Gecko (como o Mozilla Firefox) está planej
 
    4.2. Navegue para `chrome://extensions/` e clique em "Carregar sem compactação" ou similar.
 
+   4.3. Selecione a pasta extraída no passo anterior.
+
 5. Pronto!
 
 ### Execução

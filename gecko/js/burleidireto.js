@@ -38,23 +38,14 @@ async function changeBlur() {
 }
 
 async function getFromStorage(key) {
-  try {
-    let chromeStorage = await chrome.storage.local.get(key);
-    log(`${key} from Chromium storage: ${chromeStorage[key] || false} `);
-    return chromeStorage[key];
-  } catch (error) {
-    let localStorage = await browser.storage.local.get(key);
-    log(`${key} from Gecko storage: ${localStorage[key] || false}`);
-    return localStorage[key];
-  }
+  if (typeof browser === "undefined") var browser = chrome;
+  const localStorage = await browser.storage.local.get(key);
+  return localStorage[key];
 }
 
 function setToStorage(key, value) {
-  try {
-    chrome.storage.local.set({ [key]: value });
-  } catch (error) {
-    browser.storage.local.set({ [key]: value });
-  }
+  if (typeof browser === "undefined") var browser = chrome;
+  browser.storage.local.set({ [key]: value });
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
