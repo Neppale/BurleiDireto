@@ -29,7 +29,7 @@
     "64": "/img/64x64.png",
     "128": "/img/128x128.png"
   },
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
   "web_accessible_resources": [
     {
       "matches": ["https://www.passeidireto.com/*"],
