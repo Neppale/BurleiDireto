@@ -1,12 +1,4 @@
 /**
- * Works just like `console.log()` but with a prefix.
- * @param data - The data to be logged.
- */
-function log(...data) {
-  console.log("[BurleiDireto]", ...data);
-}
-
-/**
  * Gets switchOption from the local storage and,
  * if it's on, it adds a stylesheet to the page, otherwise,
  * it removes the stylesheet.
@@ -37,28 +29,34 @@ async function changeBlur() {
   }
 }
 
-async function getFromStorage(key, browser) {
-  if (typeof browser === "undefined") var browser = chrome;
+var browser = chrome || browser;
+/**
+ * Gets the value of a key from the local storage.
+ * @param {string} key
+ * @returns The value of the key or false if it doesn't exist.
+ */
+async function getFromStorage(key) {
   const localStorage = await browser.storage.local.get(key);
   return localStorage[key] || false;
 }
 
-function setToStorage(key, value, browser) {
-  if (typeof browser === "undefined") var browser = chrome;
+/**
+ * Sets a key-value pair to the local storage.
+ * @param {string} key
+ * @param {any} value
+ */
+function setToStorage(key, value) {
   browser.storage.local.set({ [key]: value });
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
-  if (typeof browser === "undefined") var browser = chrome;
-
-  const switchOption = await getFromStorage("switchOption", browser);
+  const switchOption = await getFromStorage("switchOption");
   const activateToggle = document.getElementById("activate");
   if (activateToggle) activateToggle.checked = switchOption;
   else return;
 
   document.getElementById("activate").addEventListener("click", async () => {
     const switchOption = document.getElementById("activate").checked;
-    if (typeof browser === "undefined") var browser = chrome;
     const [tab] = await browser.tabs.query({
       active: true,
       currentWindow: true,
