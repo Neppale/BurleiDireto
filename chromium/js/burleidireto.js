@@ -40,7 +40,7 @@ async function changeBlur() {
 async function getFromStorage(key) {
   if (typeof browser === "undefined") var browser = chrome;
   const localStorage = await browser.storage.local.get(key);
-  return localStorage[key];
+  return localStorage[key] || false;
 }
 
 function setToStorage(key, value) {
@@ -49,10 +49,10 @@ function setToStorage(key, value) {
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
-  const switchOption = await getFromStorage("switchOption");
-  if (!!switchOption && switchOption !== undefined)
-    document.getElementById("activate").checked = true;
-  else document.getElementById("activate").checked = false;
+  const switchOption = await getFromStorage("switchOption", browser);
+  const activateToggle = document.getElementById("activate");
+  if (activateToggle) activateToggle.checked = switchOption;
+  else return;
 
   document.getElementById("activate").addEventListener("click", async () => {
     const switchOption = document.getElementById("activate").checked;

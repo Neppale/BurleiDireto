@@ -16,9 +16,8 @@ Está disponível para os seguintes navegadores:
 - [Opera](https://www.opera.com/pt-br/computer/windows),
 - [Opera GX](https://www.opera.com/computer/gx),
 - [Ungoogled Chromium](https://ungoogled-software.github.io/ungoogled-chromium-binaries/),
-- Entre outros navegadores baseados no Chromium.
-
-Suporte para navegadores baseados em Gecko (como o Mozilla Firefox) está planejado para os próximos meses, além de instalação facilitada pelo Chrome Web Store.
+- [Firefox](https://www.mozilla.org/pt-BR/firefox/new/),
+- Entre outros navegadores baseados no Chromium e Gecko.
 
 ### Instalação
 

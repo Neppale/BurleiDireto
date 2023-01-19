@@ -2,7 +2,7 @@
   "name": "BurleiDireto",
   "description": "Burle a censura do PasseiDireto e garanta a liberdade do conhecimento. De graça.",
   "version": "2.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "browser_specific_settings": {
     "gecko": {
       "id": "gabriel@verissimo.dev"
@@ -14,11 +14,7 @@
       "matches": ["https://www.passeidireto.com/*"]
     }
   ],
-  "background": {
-    "scripts": ["./js/burleidireto.js"],
-    "persistent": false
-  },
-  "browser_action": {
+  "action": {
     "default_popup": "./html/popup.html",
     "default_icon": {
       "16": "/img/16x16.png",
@@ -33,7 +29,11 @@
     "64": "/img/64x64.png",
     "128": "/img/128x128.png"
   },
-
-  "permissions": ["storage", "activeTab", "scripting", "tabs"],
-  "web_accessible_resources": ["https://www.passeidireto.com/*"]
+  "permissions": ["storage", "activeTab", "scripting"],
+  "web_accessible_resources": [
+    {
+      "matches": ["https://www.passeidireto.com/*"],
+      "resources": ["css/styles.css"]
+    }
+  ]
 }
