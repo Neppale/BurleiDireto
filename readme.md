@@ -22,18 +22,19 @@ Está disponível para os seguintes navegadores:
 ### Instalação
 
 1. Navegue para https://github.com/Neppale/burleidireto/releases/latest para baixar a última versão do BurleiDireto.
-2. Extraia o arquivo baixado.
-3. Caso seja necessário, habilite o Modo Desenvolvedor nas configurações de seu navegador.
-4. Arraste o arquivo extraído `BurleiDireto.crx` para a janela de extensões do seu navegador (geralmente acessada pelo site `chrome://extensions/`).
+2. Caso seja necessário, habilite o Modo Desenvolvedor nas configurações de seu navegador.
+3. Arraste o arquivo extraído `BurleiDireto.crx` para a janela de extensões do seu navegador (geralmente acessada pelo site `chrome://extensions/`).
    Alguns navegadores podem não permitir a instalação de extensões externas desta forma.
 
-   4.1. Neste caso, usando um programa de compactação como o 7-Zip ou WinRAR, extraia o arquivo `BurleiDireto.crx` para uma pasta separada.
+   3.1. Neste caso, baixe o arquivo `BurleiDireto.zip` disponível na mesma página de releases e extraia-o.
 
-   4.2. Navegue para `chrome://extensions/` e clique em "Carregar sem compactação" ou similar.
+   3.2. Navegue para `chrome://extensions/` e clique em "Carregar sem compactação" ou similar.
 
-   4.3. Selecione a pasta extraída no passo anterior.
+   3.3. Selecione a pasta extraída no passo anterior. No caso do Firefox, vá para a página `about:addons`, clique na engrenagem e selecione "Depurar extensões". Em seguida, clique em "Carregar extensão temporária" e selecione o arquivo `manifest.json` extraído no passo 3.1.
 
-5. Pronto!
+   Lembre-se que a extensão será removida ao fechar o navegador devido à natureza temporária da instalação.
+
+4. Pronto!
 
 ### Execução
 
