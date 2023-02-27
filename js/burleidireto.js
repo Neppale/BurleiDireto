@@ -5,28 +5,19 @@
  */
 async function changeBlur() {
   const switchOption = await getFromStorage("switchOption");
+  const hiddenText = document.getElementById("text-inner-content");
+  const originalStyle = `
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  bottom: 165px;
+  left: 0px;
+  `;
 
-  if (switchOption) {
-    const stylesheet = document.createElement("style");
-    stylesheet.classList.add("burleiDireto");
-    stylesheet.innerHTML = `
-      pre {
-        content: initial !important;
-        backdrop-filter: none !important;
-        user-select: text !important;
-      }
-      ::after {
-        content: initial !important;
-        backdrop-filter: none !important;
-        user-select: text !important;
-      }
-    `;
-    document.head.appendChild(stylesheet);
-  } else {
-    document.head.removeChild(
-      document.getElementsByClassName("burleiDireto")[0]
-    );
-  }
+  if (switchOption) hiddenText.style = "";
+  else hiddenText.style = originalStyle;
 }
 
 var browser = chrome || browser;
