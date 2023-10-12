@@ -6,7 +6,10 @@
 async function changeBlur() {
   const switchOption = await getFromStorage("switchOption");
   const hiddenText = document.getElementById("text-inner-content");
-  const originalStyle = `
+  const freeTrialBanners = document.getElementsByClassName(
+    "BannerSelector_banner-container__stkoO"
+  );
+  const originalTextStyle = `
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   position: absolute;
@@ -16,8 +19,17 @@ async function changeBlur() {
   left: 0px;
   `;
 
-  if (switchOption) hiddenText.style = "";
-  else hiddenText.style = originalStyle;
+  if (switchOption) {
+    hiddenText.style = "";
+    for (let banner of freeTrialBanners) {
+      banner.style = "display: none;";
+    }
+  } else {
+    hiddenText.style = originalTextStyle;
+    for (let banner of freeTrialBanners) {
+      banner.style = "";
+    }
+  }
 }
 
 var browser = chrome || browser;
